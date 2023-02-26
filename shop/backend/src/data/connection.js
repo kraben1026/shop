@@ -1,6 +1,6 @@
-import mysql from 'mysql';
+import mysql from "mysql";
 
-import config from '../config';
+import config from "../config";
 
 const pool = mysql.createPool({
   connectionLimit: 2,
@@ -13,14 +13,12 @@ const pool = mysql.createPool({
 export const db = {
   query(query, values) {
     return new Promise((resolve, reject) => {
-      pool.query(query, values, (err, results, fields) => {
+      pool.query(query, values, (err, results) => {
         if (err) {
           reject(err);
-
           return;
         }
-
-        resolve({ results, fields });
+        resolve(results);
       });
     });
   },

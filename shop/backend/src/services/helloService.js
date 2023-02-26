@@ -1,4 +1,4 @@
-import { helloWorld } from '../models/helloWorld';
+import { helloWorld } from "../models/helloWorld";
 
 export const helloService = {
   async getHelloWorld() {

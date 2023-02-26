@@ -1,12 +1,14 @@
-import express from 'express';
-import cors from 'cors';
-import { helloController } from '../controllers/helloController';
+import express from "express";
+import cors from "cors";
+import { helloController } from "../controllers/helloController";
+import { loginController } from "../controllers/loginController";
 
 const router = express.Router();
 
 router.use(cors());
 router.use(express.json());
 
-router.get('/hello', helloController.get);
+router.get("/hello", helloController.get);
+router.post("/login", loginController.login);
 
 export default router;
