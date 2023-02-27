@@ -6,8 +6,8 @@ export const loginController = {
     try {
       const loginRes = await loginService.login(loginData);
       res.status(200).json(loginRes);
-    } catch (error) {
-      res.status(400).json(error);
+    } catch (err) {
+      res.status(400).json(err.message);
     }
   },
 };
