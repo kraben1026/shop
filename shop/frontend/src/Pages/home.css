@@ -1,0 +1,13 @@
+.homeContainer {
+  background-color: aliceblue;
+}
+.itemsContainer {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: scroll;
+}
+.items {
+  width: 380px;
+  height: 350px;
+}

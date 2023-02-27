@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+}
+#loginTitle {
+  text-align: center;
+}
+#usernameTitle {
+}
+#passwordTitle {
+}
+#loginBtn {
+  border: none;
+  cursor: pointer;
+}
