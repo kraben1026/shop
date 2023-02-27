@@ -10,8 +10,9 @@ router.use(cors());
 router.use(express.json());
 
 router.get("/hello", helloController.get);
+router.get("/getItems", itemController.getItems);
 router.post("/login", loginController.login);
-router.post("/addItem", itemController.addItem);
+router.post("/sell", itemController.sell);
 router.delete("/buy", itemController.buy);
 
 export default router;
