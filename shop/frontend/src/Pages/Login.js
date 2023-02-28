@@ -29,11 +29,12 @@ const Login = () => {
     <div className="container">
       <div className="wrapper">
       <div className="welcome">
-        <h3 id="welcome">Welcome back</h3>
-        <p id="missedU">We've missed you!</p>
-        <p id="pleaseLogin">Please login to check items</p>
+        <h3 id="welcome">Welcome!</h3>
+        <p id="missedU">Never been here ?</p>
+        <p id="pleaseLogin">Please register <a href="" onClick={() => {navigate("/*")}}>here</a> to check items</p>
         </div>
       </div>
+      <p>OR</p>
       <div className="loginForm">
         <form action="">
           <p id="usernameTitle">Username</p>
@@ -53,7 +54,6 @@ const Login = () => {
               Login
             </button>
           </div>
-          <p id="haventRegistered">havent registered yet?  <a href="">click here!</a></p>
         </form>
       </div>
     </div>
