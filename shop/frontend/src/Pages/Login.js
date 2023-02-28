@@ -27,9 +27,15 @@ const Login = () => {
   };
   return (
     <div className="container">
-      <div className="form">
+      <div className="wrapper">
+      <div className="welcome">
+        <h3 id="welcome">Welcome back</h3>
+        <p id="missedU">We've missed you!</p>
+        <p id="pleaseLogin">Please login to check items</p>
+        </div>
+      </div>
+      <div className="loginForm">
         <form action="">
-          <p id="loginTitle">Login</p>
           <p id="usernameTitle">Username</p>
           <input
             type="text"
@@ -47,7 +53,7 @@ const Login = () => {
               Login
             </button>
           </div>
-          <p>havent registered yet? click here!</p>
+          <p id="haventRegistered">havent registered yet?  <a href="">click here!</a></p>
         </form>
       </div>
     </div>

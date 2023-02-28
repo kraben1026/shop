@@ -36,35 +36,40 @@ const Sell = () => {
   };
 
   return (
-    <div className="container">
-      <form action="" className="form">
-        <p>Name</p>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <p>Price</p>
-        <input
-          type="text"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <p>Photo(url)</p>
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
-        <div className="button-wrapper">
-          <button id="sellBtn" onClick={sellBtnHandler}>
-            Sell
-          </button>
-          <button id="sellBtn" onClick={(() => navigate("/home"))}>
-            Back
-          </button>
-        </div>
-      </form>
+    <div className="sellFormWrapper">
+      <p className="sellFromDescription">
+        If you want to sell an intem please fill the form below
+      </p>
+      <div className="sellFormContainer">
+        <form action="" className="sellForm">
+          <p className="text">Name</p>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <p className="text">Price</p>
+          <input
+            type="text"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <p className="text">Photo(url)</p>
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+          <div className="button-wrapper">
+            <button className="sellBtn" onClick={sellBtnHandler}>
+              Sell
+            </button>
+            <button className="sellBtn" onClick={() => navigate("/home")}>
+              Back
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -3,20 +3,88 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #ece9e6;
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  );
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  );
 }
-.form {
-  border: 1px solid;
-  padding: 10px;
-  border-radius: 10px;
-}
-#loginTitle {
+.wrapper{
+  background-color: #fcf8f5;
+  min-height: 220px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   text-align: center;
 }
+.welcome{
+  margin-top: 30%;
+  margin-left: 30px;
+  margin-right: 30px;
+
+}
+.loginForm {
+  border:0px;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fcf8f5;
+}
+input{
+  border: 1px sandybrown solid ;
+  border-radius: 5px;
+}
 #usernameTitle {
+  margin-bottom:5px;
 }
 #passwordTitle {
+  margin-bottom:5px;
+
 }
 #loginBtn {
-  border: none;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 100px;
+  background-color: #8e8caf;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  margin-top:10px;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
   cursor: pointer;
+}
+#loginBtn:hover{
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 100px;
+  background-color: #8e8caf;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  -webkit-box-shadow: 3px 2px 5px -1px #000000; 
+  box-shadow: 1px 1px 6px -1px #000000;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top:10px;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  cursor: pointer;
+}
+#haventRegistered {
+  font-size: 10px;
 }

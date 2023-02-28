@@ -9,12 +9,27 @@ const Home = () => {
     localStorage.removeItem("token");
     navigate("/")
   }
+  const token = localStorage.getItem("token");
   const [items, setItems] = useState([]);
+  const [username, setUsername] = useState('');
+
 
   const render = async () =>{
-    let response = await fetch("http://localhost:8080/api/getItems");
-    let data = await response.json();
-    setItems(data);
+    //fetch items
+    const response = await fetch("http://localhost:8080/api/getItems");
+    const data = await response.json();
+    setItems(data);  
+    //fetch users
+    const getUsersResponse = await fetch("http://localhost:8080/api/getUsers",{
+      method: "GET",
+      headers:{
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}` 
+      }
+
+    });
+    const userData = await getUsersResponse.json();
+    setUsername(userData[0].username)
   }
     useEffect(() => {
       render()
@@ -22,18 +37,19 @@ const Home = () => {
   return (
     <>
       <header>
-        <span>Hi, User</span>
-        <button onClick={() => navigate("/sell")}>Sell item</button>
-        <button onClick={logOut}>Log out</button>
+        <div className="title"><h1>Legjobbfogás.hu</h1></div>
+        <span id="name">Hi,{username} </span>
+        <button onClick={() => navigate("/sell")} className = "homeBtn">Sell item</button>
+        <button onClick={logOut} className = "homeBtn">Log out</button>
       </header>
 
       <div className="homeContainer">
-        <h1>Legjobbfogás.hu</h1>
+        
         <main className="itemsContainer">
         {items.map((elem) => (
         <Item
         key={elem.id}
-        className="items"
+        className= "item itemName"
         name={elem.Name}
         price={elem.Price}
         src={elem.url}

@@ -2,10 +2,10 @@
 
 const Item = (props) => {
   return (
-    <div>
-        <img src={props.src} alt="" />
-        <p>{props.name}</p>
-        <p>{props.price}</p>
+    <div className = {props.className}>
+        <img src={props.src} alt=""  className="itemImg"/>
+        <p className="itemName">{props.name}</p>
+        <p className="itemPrice">{props.price} Ft</p>
     </div>
   )
 }
