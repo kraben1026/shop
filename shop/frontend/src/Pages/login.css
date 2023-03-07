@@ -22,11 +22,13 @@
   margin-right: 40px;
   -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
   box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74);
+  transition: 0.9s;
 }
 .wrapper:hover{
   -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
   box-shadow: 9px 10px 17px -1px rgba(0,0,0,0.74);
   transform: scale(1.2);
+  transition: 0.9s;
 }
 
 .welcome{
@@ -43,11 +45,13 @@
   background-color: #fcf8f5;
   -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
   box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74);
+  transition: 0.9s;
 }
 .loginForm:hover{
   -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
   box-shadow: 9px 10px 17px -1px rgba(0,0,0,0.74);
   transform: scale(1.2);
+  transition: 0.9s;
 }
 input{
   border: 1px sandybrown solid ;
@@ -71,7 +75,7 @@ input{
   font-size: 16px;
   margin-top:10px;
   border: 0;
-
+  transition: 0.9s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -90,7 +94,7 @@ input{
   font-size: 16px;
   margin-top:10px;
   border: 0;
-
+  transition: 0.9s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;

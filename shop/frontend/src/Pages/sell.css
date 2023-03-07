@@ -28,10 +28,15 @@
     border: 1px solid;
     padding: 60px;
     border-radius: 10px;
+    transition: 0.9s;
+
   }
   .sellForm:hover{
     -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
     box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74);
+    transition: 0.9s;
+    transform: scale(1.04);
+
   }
 
   .text{
@@ -63,6 +68,8 @@
     touch-action: manipulation;
   
     cursor: pointer;
+    transition: 0.9s;
+
   } 
   .sellBtn:hover{
     color: #fff;
@@ -76,7 +83,7 @@
     font-size: 16px;
     margin-top:10px;
     border: 0;
-  
+    transition: 0.9s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
