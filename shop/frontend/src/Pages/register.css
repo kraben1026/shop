@@ -1,0 +1,24 @@
+body{
+    background-color: #f0faff;
+}
+.registerWrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registerForm{
+    padding:10px;
+    background-color: #ffffff;
+    height: auto;
+    transition: 0.4s;
+    -webkit-box-shadow: 2px 3px 5px -1px rgba(0,0,0,0.74); 
+    box-shadow: 2px 3px 6px -1px rgba(0,0,0,0.74);
+  
+}
+.registerForm:hover{
+    -webkit-box-shadow: 7px 8px 15px -1px rgba(0,0,0,0.74); 
+    box-shadow: 9px 10px 17px -1px rgba(0,0,0,0.74);
+    transition: 0.4s;
+  }

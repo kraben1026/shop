@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./sell.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const Sell = () => {
   const navigate = useNavigate();
@@ -35,7 +36,9 @@ const Sell = () => {
     fetcher();
   };
 
-  return (
+  return (<>
+
+    <Navbar button="items" route = "/home"/>
     <div className="sellFormWrapper">
       <p className="sellFromDescription">
         If you want to sell an intem please fill the form below
@@ -71,6 +74,7 @@ const Sell = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

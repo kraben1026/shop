@@ -1,6 +1,7 @@
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../Components/Navbar";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -25,13 +26,14 @@ const Login = () => {
       alert(data);
     }
   };
-  return (
+  return (<>
+   <Navbar button="sell items" route = "/sell" showButton = {true}/>
     <div className="container">
       <div className="wrapper">
       <div className="welcome">
         <h3 id="welcome">Welcome!</h3>
         <p id="missedU">Never been here ?</p>
-        <p id="pleaseLogin">Please register <a href="" onClick={() => {navigate("/*")}}>here</a> to check items</p>
+        <p id="pleaseLogin">Please register <a href="" onClick={() => {navigate("/register")}}>here</a> to check items</p>
         </div>
       </div>
       <p>OR</p>
@@ -57,6 +59,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
