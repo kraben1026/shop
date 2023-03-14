@@ -14,5 +14,6 @@ router.get("/getItems", itemController.getItems);
 router.post("/login", loginController.login);
 router.post("/sell", itemController.sell);
 router.delete("/buy", itemController.buy);
+router.post("/addUser", userController.addUser);
 
 export default router;

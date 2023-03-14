@@ -1,10 +1,11 @@
 import { db } from "../data/connection";
+import bcrypt from 'bcrypt';
 
 export const loginModel = {
   async login(loginData) {
-    return db.query("SELECT * FROM users WHERE username = ? AND password = ? ", [
-      loginData.username,
-      loginData.password,
+    const user = await db.query("SELECT * FROM users WHERE username = ?", [
+      loginData.username
     ]);
+    console.log(user)
   },
 };
