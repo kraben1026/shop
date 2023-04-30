@@ -9,11 +9,12 @@ const router = express.Router();
 router.use(cors());
 router.use(express.json());
 
-router.get("/getUsers", userController.get);
+router.get("/getUsers", userController.getUsers);
 router.get("/getItems", itemController.getItems);
 router.post("/login", loginController.login);
 router.post("/sell", itemController.sell);
 router.delete("/buy", itemController.buy);
 router.post("/addUser", userController.addUser);
+router.get("/myItems", userController.myItems);
 
 export default router;
