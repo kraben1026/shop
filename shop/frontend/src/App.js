@@ -5,6 +5,7 @@ import './App.css';
 import Sell from "./Pages/Sell";
 import NotImplemented from "./Pages/NotImplemented";
 import Register from "./Pages/Register";
+import MyItems from "./Pages/MyItems";
 
 const router = createBrowserRouter([
   {
@@ -24,9 +25,14 @@ const router = createBrowserRouter([
     element: <Register />
   },
   {
+    path: "/myItems",
+    element: <MyItems />
+  },
+  {
     path: "/*",
     element: <NotImplemented />
   }
+
 ]); 
 function App() {
   return (

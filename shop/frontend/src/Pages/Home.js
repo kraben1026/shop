@@ -36,7 +36,7 @@ const Home = () => {
   }
   return (
     <>
-      <Navbar button="sell items" route = "/sell" showButton = {true}/>
+      <Navbar/>
       <div className="homeContainer">
         <main className="itemsContainer">
           {items.map((elem) => (

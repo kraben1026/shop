@@ -8,8 +8,10 @@ const Navbar = (props) => {
       }
   return (
     <nav className="navbar">
-        <div className="title"><h1>Market Place</h1></div>
-        <button onClick={() => navigate(props.route)} className = "homeBtn">{props.button}</button>
+        <div className="title"><h1>Marketplace</h1></div>
+        <button onClick={() => navigate("/sell")} className = "homeBtn">Sell items{props.button}</button>
+        <button onClick={() => navigate("/myItems")} className = "homeBtn">My Items</button>
+        <button onClick={() => navigate("/")} className = "homeBtn">Logout</button>
         {props.showButton && (
         <button onClick={logOut} className = "homeBtn">Log out</button>
         )}

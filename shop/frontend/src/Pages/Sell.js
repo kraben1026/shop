@@ -38,7 +38,7 @@ const Sell = () => {
 
   return (<>
 
-    <Navbar button="items" route = "/home"/>
+    <Navbar/>
     <div className="sellFormWrapper">
       <p className="sellFromDescription">
         If you want to sell an intem please fill the form below

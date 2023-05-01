@@ -1,7 +1,7 @@
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "../Components/Navbar";
+import LoginNavbar from "../Components/LoginNavbar";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -27,7 +27,7 @@ const Login = () => {
     }
   };
   return (<>
-   <Navbar button="sell items" route = "/sell" showButton = {true}/>
+   <LoginNavbar/>
     <div className="container">
       <div className="wrapper">
       <div className="welcome">
