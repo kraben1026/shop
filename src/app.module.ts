@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-import { Module } from '@nestjs/common';
+import { BadRequestException, Module, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ItemService } from './item/item.service';
@@ -14,6 +13,8 @@ import { Item } from './entities/item.entity';
 import { User } from './entities/user.entity';
 import { AuthorizationService } from './middlewares/authorization';
 import { ConfigService } from '@nestjs/config';
+import { UserRepository } from './repositories/userRepository';
+import { APP_PIPE } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -27,9 +28,9 @@ import { ConfigService } from '@nestjs/config';
       entities: [Item, User], // Add the entities here
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([ItemRepository, Item, User]),
+    TypeOrmModule.forFeature([ItemRepository, UserRepository, Item, User]),
   ],
   controllers: [AppController, ItemController, LoginController, UserController],
-  providers: [AppService, ItemService, LoginService, UserService, ItemRepository, AuthorizationService, ConfigService],
+  providers: [AppService, ItemService, LoginService, UserService, ItemRepository, AuthorizationService, ConfigService, UserRepository],
 })
 export class AppModule {}

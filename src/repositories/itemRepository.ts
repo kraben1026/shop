@@ -1,9 +1,9 @@
-/* eslint-disable prettier/prettier */
-import { Repository } from "typeorm";
+import { EntityRepository, Repository } from "typeorm";
 import { Item } from "../entities/item.entity";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "src/entities/user.entity";
+import { SellItemDto } from "src/dtos/sellItem.dto";
 
 
 @Injectable()
@@ -17,19 +17,36 @@ export class ItemRepository {
     return await this.itemEntityRepository.findOne(id);
   }*/
 
-  public async find(criteria: { [key: string]: any }): Promise<Item[]> {
-    return await this.itemEntityRepository.find(criteria);
+  public async find(): Promise<Item[]> {
+    try {
+      return await this.itemEntityRepository.find();
+    } catch (error) {
+      console.log(error)
+      return error
+    }
   }
 
   public async save(item: Item): Promise<Item> {
-    return await this.itemEntityRepository.save(item);
+    try {
+      return await this.itemEntityRepository.save(item);
+    } catch (error) {
+      console.log(error)
+      return error
+    }
   }
 
   /*public async update(item: Item): Promise<Item> {
     return await this.itemEntityRepository.update(item.id, item);
   }*/
 
-  public async delete(item: Item): Promise<void> {
-    await this.itemEntityRepository.delete(item.id);
+  public async delete(id: number): Promise<void> {
+    try {
+      await this.itemEntityRepository.delete(id);
+    } catch (error) {
+      console.log(error)
+      return error
+    }
   }
+
+
 }
