@@ -8,13 +8,12 @@ import { ItemController } from './item/item.controller';
 import { LoginController } from './login/login.controller';
 import { UserController } from './user/user.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ItemRepository } from './repositories/itemRepository';
 import { Item } from './entities/item.entity';
 import { User } from './entities/user.entity';
 import { AuthorizationService } from './middlewares/authorization';
 import { ConfigService } from '@nestjs/config';
-import { UserRepository } from './repositories/userRepository';
-import { APP_PIPE } from '@nestjs/core';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from 'Auth/auth.guard';
 
 @Module({
   imports: [
@@ -28,9 +27,12 @@ import { APP_PIPE } from '@nestjs/core';
       entities: [Item, User], // Add the entities here
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([ItemRepository, UserRepository, Item, User]),
+    TypeOrmModule.forFeature([Item, User]),
   ],
   controllers: [AppController, ItemController, LoginController, UserController],
-  providers: [AppService, ItemService, LoginService, UserService, ItemRepository, AuthorizationService, ConfigService, UserRepository],
+  providers: [AppService, ItemService, LoginService, UserService, AuthorizationService, ConfigService, {
+    provide: APP_GUARD,
+    useClass: AuthGuard,
+  },],
 })
 export class AppModule {}

@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CheckLoginDto } from 'src/dtos/checkLogin.dto';
-import { UserRepository } from 'src/repositories/userRepository';
+import { UserService } from 'src/user/user.service';
 
 @Injectable()
 export class LoginService {
   constructor(
-    private userRepository: UserRepository
+    private userRepository: UserService
   ) {}
 
   async login(checkLoginDto: CheckLoginDto){

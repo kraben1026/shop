@@ -7,7 +7,7 @@ import { SellItemDto } from "src/dtos/sellItem.dto";
 
 
 @Injectable()
-export class ItemRepository {
+export class ItemRepository{
   constructor(
     @InjectRepository(Item) // Use 'Item' entity instead of 'User'
     private itemEntityRepository: Repository<Item>
@@ -17,23 +17,6 @@ export class ItemRepository {
     return await this.itemEntityRepository.findOne(id);
   }*/
 
-  public async find(): Promise<Item[]> {
-    try {
-      return await this.itemEntityRepository.find();
-    } catch (error) {
-      console.log(error)
-      return error
-    }
-  }
-
-  public async save(item: Item): Promise<Item> {
-    try {
-      return await this.itemEntityRepository.save(item);
-    } catch (error) {
-      console.log(error)
-      return error
-    }
-  }
 
   /*public async update(item: Item): Promise<Item> {
     return await this.itemEntityRepository.update(item.id, item);
@@ -48,5 +31,10 @@ export class ItemRepository {
     }
   }
 
-
+  public async findByUserId(user_id){
+    return await this.itemEntityRepository.find({ where: { user_id: user_id } })
+  }
+  getHello(){
+    return 'hello'
+  }
 }

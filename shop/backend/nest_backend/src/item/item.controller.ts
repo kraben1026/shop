@@ -1,16 +1,12 @@
-import { Controller, Inject, Post, Body, HttpCode, HttpStatus, Headers, Get } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode, HttpStatus, Headers, Get, Res } from '@nestjs/common';
 import { AuthorizationService } from 'src/middlewares/authorization';
-import { ItemData } from '../interfaces/itemData';
-import { Repository } from 'typeorm';
 import { ItemService } from './item.service';
-import { Item } from 'src/entities/item.entity';
 import { SellItemDto } from 'src/dtos/sellItem.dto';
 
 @Controller('item')
 export class ItemController {
   constructor(
     private itemService: ItemService,
-    private authService: AuthorizationService
   ){}
   
   @Post('sell')
@@ -26,9 +22,14 @@ export class ItemController {
       return await this.itemService.buy(id);
   }
 
-  @Get('get-items')
-  @HttpCode(HttpStatus.OK)
-  async getItems(){
-      return await this.itemService.getItems();
+  @Post('myItems')
+  async myItems(@Body() user_id: number) {
+    try {
+      return await this.itemService.getItemsByUserId(user_id);
+    } catch (error) {
+      console.log(error);
+      return null
+    }
   }
+  
 }
